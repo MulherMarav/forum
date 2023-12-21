@@ -1,8 +1,7 @@
 package br.com.mulhermarav.forum.controller
 
-import br.com.mulhermarav.forum.dto.RespostaInput
+import br.com.mulhermarav.forum.dto.NovoRespostaInput
 import br.com.mulhermarav.forum.dto.RespostaOutput
-import br.com.mulhermarav.forum.model.Resposta
 import br.com.mulhermarav.forum.service.RespostaService
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.GetMapping
@@ -24,7 +23,7 @@ class RespostaController(
     }
 
     @PostMapping
-    fun cadastrar(@PathVariable id: Long, @RequestBody @Valid input: RespostaInput) {
+    fun cadastrar(@PathVariable id: Long, @RequestBody @Valid input: NovoRespostaInput) {
         service.cadastrar(id, input)
     }
 }

@@ -1,22 +1,20 @@
 package br.com.mulhermarav.forum.mapper
 
 import br.com.mulhermarav.forum.dto.RespostaOutput
-import br.com.mulhermarav.forum.dto.TopicoInput
+import br.com.mulhermarav.forum.dto.NovoTopicoInput
 import br.com.mulhermarav.forum.dto.TopicoOutput
 import br.com.mulhermarav.forum.model.Topico
 import br.com.mulhermarav.forum.service.CursoService
-import br.com.mulhermarav.forum.service.TopicoService
 import br.com.mulhermarav.forum.service.UsuarioService
 import org.springframework.stereotype.Component
-import kotlin.random.Random.Default.nextLong
 
 @Component
 class TopicoMapper(
     private val cursoService: CursoService,
     private val usuarioService: UsuarioService
-): Mapper<Topico, TopicoInput, TopicoOutput> {
+): Mapper<Topico, NovoTopicoInput, TopicoOutput> {
 
-    override fun inputToModel(input: TopicoInput): Topico {
+    override fun inputToModel(input: NovoTopicoInput): Topico {
         return Topico(
             titulo = input.titulo,
             mensagem = input.mensagem,

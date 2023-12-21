@@ -1,6 +1,7 @@
 package br.com.mulhermarav.forum.service
 
-import br.com.mulhermarav.forum.dto.TopicoInput
+import br.com.mulhermarav.forum.dto.AtualizaTopicoInput
+import br.com.mulhermarav.forum.dto.NovoTopicoInput
 import br.com.mulhermarav.forum.dto.TopicoOutput
 import br.com.mulhermarav.forum.mapper.TopicoMapper
 import br.com.mulhermarav.forum.model.Topico
@@ -20,6 +21,26 @@ class TopicoService(
         }
     }
 
+    fun listarTopicosPorCurso(id: Long): List<TopicoOutput> {
+        println("listando tópicos por curso")
+
+        return topicos.filter {
+            it.curso.id == id
+        }.map {
+            mapper.modelToOutput(it)
+        }
+    }
+
+    fun listarTopicosPorAutor(id: Long): List<TopicoOutput> {
+        println("listando tópicos por autor")
+
+        return topicos.filter {
+            it.autor.id == id
+        }.map {
+            mapper.modelToOutput(it)
+        }
+    }
+
     fun buscarPorId(id: Long): TopicoOutput =
         mapper.modelToOutput(buscarTopico(id))
 
@@ -29,15 +50,17 @@ class TopicoService(
         return topicos.first { it.id == id }
     }
 
-    fun cadastrar(input: TopicoInput) {
+    fun cadastrar(input: NovoTopicoInput): TopicoOutput {
         println("cadastrando tópico")
 
-        topicos = topicos.plus(
-            mapper.inputToModel(input)
-                .copy(
-                    id = topicos.size.toLong() + 1
-                )
-        )
+        val topico = mapper.inputToModel(input)
+            .copy(
+                id = topicos.size.toLong() + 1
+            )
+
+        topicos = topicos.plus(topico)
+
+        return mapper.modelToOutput(topico)
     }
 
     fun salvar(topico: Topico) {
@@ -50,5 +73,28 @@ class TopicoService(
                 it
             }
         }
+    }
+
+    fun atualizar(input: AtualizaTopicoInput): TopicoOutput {
+        println("atualizando tópico")
+
+        val topico = buscarTopico(input.id)
+            .copy(
+                id = input.id,
+                titulo = input.titulo,
+                mensagem = input.mensagem
+            )
+
+        salvar(topico)
+
+        return mapper.modelToOutput(topico)
+    }
+
+    fun deletar(id: Long) {
+        println("deletando tópico")
+
+        topicos = topicos.minus(
+            buscarTopico(id)
+        )
     }
 }

@@ -1,6 +1,6 @@
 package br.com.mulhermarav.forum.service
 
-import br.com.mulhermarav.forum.dto.RespostaInput
+import br.com.mulhermarav.forum.dto.NovoRespostaInput
 import br.com.mulhermarav.forum.dto.RespostaOutput
 import br.com.mulhermarav.forum.model.Resposta
 import org.springframework.stereotype.Service
@@ -20,7 +20,7 @@ class RespostaService (
         return topico.respostas
     }
 
-    fun cadastrar(id: Long, input: RespostaInput) {
+    fun cadastrar(id: Long, input: NovoRespostaInput) {
         println("cadastrando resposta")
 
         val resposta = Resposta (
