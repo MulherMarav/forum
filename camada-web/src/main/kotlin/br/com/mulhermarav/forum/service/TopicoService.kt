@@ -3,6 +3,7 @@ package br.com.mulhermarav.forum.service
 import br.com.mulhermarav.forum.dto.AtualizaTopicoInput
 import br.com.mulhermarav.forum.dto.NovoTopicoInput
 import br.com.mulhermarav.forum.dto.TopicoOutput
+import br.com.mulhermarav.forum.exception.NotFoundException
 import br.com.mulhermarav.forum.mapper.TopicoMapper
 import br.com.mulhermarav.forum.model.Topico
 import org.springframework.stereotype.Service
@@ -47,7 +48,8 @@ class TopicoService(
     fun buscarTopico(id: Long): Topico {
         println("buscando tópico por id")
 
-        return topicos.first { it.id == id }
+        return topicos.firstOrNull { it.id == id }
+            ?: throw NotFoundException("Tópico não encontrado")
     }
 
     fun cadastrar(input: NovoTopicoInput): TopicoOutput {

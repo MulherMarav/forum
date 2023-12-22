@@ -18,8 +18,8 @@ class TopicoMapper(
         return Topico(
             titulo = input.titulo,
             mensagem = input.mensagem,
-            curso = cursoService.buscarPorId(input.cursoId),
-            autor = usuarioService.buscarPorId(input.autorId)
+            curso = cursoService.buscarCurso(input.cursoId),
+            autor = usuarioService.buscarUsuario(input.autorId)
         )
     }
 
@@ -34,8 +34,8 @@ class TopicoMapper(
 
         val respostas = model.respostas.map {
             RespostaOutput(
-                id = model.id,
-                mensagem = model.mensagem,
+                id = it.id,
+                mensagem = it.mensagem,
                 topicoId = topico.id,
                 topicoTitulo = topico.titulo,
                 solucao = it.solucao

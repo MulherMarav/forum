@@ -1,5 +1,6 @@
 package br.com.mulhermarav.forum.service
 
+import br.com.mulhermarav.forum.dto.CursoOutput
 import br.com.mulhermarav.forum.model.Curso
 import org.springframework.stereotype.Service
 
@@ -27,9 +28,29 @@ class CursoService(
         )
     }
 
-    fun buscarPorId(id: Long): Curso {
+    fun buscarPorId(id: Long): CursoOutput {
+
+        return buscarCurso(id).let {
+            CursoOutput(
+                nome = it.nome,
+                categoria = it.categoria
+            )
+        }
+    }
+
+    fun buscarCurso(id: Long): Curso {
         println("buscando curso por id")
 
         return cursos.first { it.id == id }
+    }
+
+    fun listar(): List<CursoOutput> {
+
+        return cursos.map {
+            CursoOutput(
+                nome = it.nome,
+                categoria = it.categoria
+            )
+        }
     }
 }

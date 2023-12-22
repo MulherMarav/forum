@@ -1,5 +1,6 @@
 package br.com.mulhermarav.forum.service
 
+import br.com.mulhermarav.forum.dto.UsuarioOutput
 import br.com.mulhermarav.forum.model.Usuario
 import org.springframework.stereotype.Service
 
@@ -22,9 +23,27 @@ class UsuarioService(
         )
     }
 
-    fun buscarPorId(id: Long): Usuario {
+    fun buscarUsuario(id: Long): Usuario {
         println("buscando usuário por id")
 
         return usuarios.first { it.id == id }
+    }
+
+    fun buscarPorId(id: Long): UsuarioOutput {
+        return buscarUsuario(id).let {
+            UsuarioOutput(
+                nome = it.nome,
+                email = it.email
+            )
+        }
+    }
+
+    fun listar(): List<UsuarioOutput> {
+        return usuarios.map {
+            UsuarioOutput(
+                nome = it.nome,
+                email = it.email
+            )
+        }
     }
 }
