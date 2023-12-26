@@ -7,6 +7,8 @@ import br.com.mulhermarav.forum.exception.NotFoundException
 import br.com.mulhermarav.forum.mapper.TopicoMapper
 import br.com.mulhermarav.forum.model.Topico
 import br.com.mulhermarav.forum.repository.TopicoRepository
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 
 @Service
@@ -15,13 +17,17 @@ class TopicoService(
     private val mapper: TopicoMapper
 ) {
 
-    fun listar(): List<TopicoOutput> {
+    fun listar(nomeCurso: String?, paginacao: Pageable
+    ): Page<TopicoOutput> {
         println("listando tópicos")
 
-        return repository.findAll()
-            .map {
-                mapper.modelToOutput(it)
-            }
+        return nomeCurso?.let { cursoNome ->
+
+            repository.findByCursoNomeContaining(cursoNome, paginacao)
+                .map { mapper.modelToOutput(it) }
+
+        } ?: repository.findAll(paginacao)
+            .map { mapper.modelToOutput(it) }
     }
 
     fun listarTopicosPorCurso(cursoId: Long): List<TopicoOutput> {
@@ -29,18 +35,14 @@ class TopicoService(
 
 
         return repository.findByCursoId(cursoId)
-            .map {
-                mapper.modelToOutput(it)
-            }
+            .map { mapper.modelToOutput(it) }
     }
 
     fun listarTopicosPorAutor(autorId: Long): List<TopicoOutput> {
         println("listando tópicos por autor")
 
         return repository.findByAutorId(autorId)
-            .map {
-                mapper.modelToOutput(it)
-            }
+            .map { mapper.modelToOutput(it) }
     }
 
     fun buscarPorId(id: Long): TopicoOutput =

@@ -17,7 +17,6 @@ class CursoService(
 
         return buscarCurso(id).let {
             CursoOutput(
-                id = it.id,
                 nome = it.nome,
                 categoria = it.categoria
             )

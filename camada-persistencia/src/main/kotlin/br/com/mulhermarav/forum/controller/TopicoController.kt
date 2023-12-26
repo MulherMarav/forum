@@ -5,6 +5,10 @@ import br.com.mulhermarav.forum.dto.input.NovoTopicoInput
 import br.com.mulhermarav.forum.dto.output.TopicoOutput
 import br.com.mulhermarav.forum.service.TopicoService
 import jakarta.validation.Valid
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.data.domain.Sort
+import org.springframework.data.web.PageableDefault
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.transaction.annotation.Transactional
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.util.UriComponentsBuilder
@@ -26,8 +31,11 @@ class TopicoController(
 ) {
 
     @GetMapping
-    fun listar(): List<TopicoOutput> {
-        return service.listar()
+    fun listar(@RequestParam(required = false) nomeCurso: String?,
+               @PageableDefault(size = 5, sort = ["titulo"],
+                   direction = Sort.Direction.DESC) paginacao: Pageable
+    ): Page<TopicoOutput> {
+        return service.listar(nomeCurso, paginacao)
     }
 
     @GetMapping("/{id}")
