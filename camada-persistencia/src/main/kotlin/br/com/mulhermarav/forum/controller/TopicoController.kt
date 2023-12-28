@@ -1,5 +1,6 @@
 package br.com.mulhermarav.forum.controller
 
+import br.com.mulhermarav.forum.dto.TopicoPorCategoriaDto
 import br.com.mulhermarav.forum.dto.input.AtualizaTopicoInput
 import br.com.mulhermarav.forum.dto.input.NovoTopicoInput
 import br.com.mulhermarav.forum.dto.output.TopicoOutput
@@ -41,6 +42,16 @@ class TopicoController(
     @GetMapping("/{id}")
     fun buscarPorId(@PathVariable id: Long): TopicoOutput {
         return service.buscarPorId(id)
+    }
+
+    @GetMapping("/relatorio")
+    fun relatorio(): List<TopicoPorCategoriaDto> {
+        return service.relatorio()
+    }
+
+    @GetMapping("/sem-respostas")
+    fun semRespostas(): List<TopicoOutput> {
+        return service.semRespostas()
     }
 
     @PostMapping

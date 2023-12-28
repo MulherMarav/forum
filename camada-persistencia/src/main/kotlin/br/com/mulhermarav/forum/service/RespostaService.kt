@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service
 class RespostaService (
     private val repository: RespostaRepository,
     private val topicoService: TopicoService,
-    private val usuarioService: UsuarioService,
+    private val usuarioService: UsuarioService
 ) {
 
     fun listar(id: Long): List<RespostaOutput> {

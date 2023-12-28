@@ -1,5 +1,6 @@
 package br.com.mulhermarav.forum.service
 
+import br.com.mulhermarav.forum.dto.TopicoPorCategoriaDto
 import br.com.mulhermarav.forum.dto.input.AtualizaTopicoInput
 import br.com.mulhermarav.forum.dto.input.NovoTopicoInput
 import br.com.mulhermarav.forum.dto.output.TopicoOutput
@@ -7,6 +8,8 @@ import br.com.mulhermarav.forum.exception.NotFoundException
 import br.com.mulhermarav.forum.mapper.TopicoMapper
 import br.com.mulhermarav.forum.model.Topico
 import br.com.mulhermarav.forum.repository.TopicoRepository
+import org.springframework.cache.annotation.CacheEvict
+import org.springframework.cache.annotation.Cacheable
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
@@ -17,6 +20,7 @@ class TopicoService(
     private val mapper: TopicoMapper
 ) {
 
+    @Cacheable(value = ["topicos"])
     fun listar(nomeCurso: String?, paginacao: Pageable
     ): Page<TopicoOutput> {
         println("listando tópicos")
@@ -56,6 +60,7 @@ class TopicoService(
         }
     }
 
+    @CacheEvict(value = ["topicos"], allEntries = true)
     fun cadastrar(input: NovoTopicoInput): TopicoOutput {
         println("cadastrando tópico")
 
@@ -72,6 +77,7 @@ class TopicoService(
         repository.save(topico)
     }
 
+    @CacheEvict(value = ["topicos"], allEntries = true)
     fun atualizar(input: AtualizaTopicoInput): TopicoOutput {
         println("atualizando tópico")
 
@@ -87,9 +93,17 @@ class TopicoService(
         return mapper.modelToOutput(topico)
     }
 
+    @CacheEvict(value = ["topicos"], allEntries = true)
     fun deletar(id: Long) {
         println("deletando tópico")
 
         repository.delete(buscarTopico(id))
     }
+
+    fun relatorio(): List<TopicoPorCategoriaDto> =
+        repository.relatorio()
+
+    fun semRespostas(): List<TopicoOutput> =
+        repository.findByRespostasIsEmpty()
+            .map { mapper.modelToOutput(it) }
 }
