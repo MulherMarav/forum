@@ -4,58 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="850bcbc3-7330-4856-b4d6-058d714a6dbb" name="Changes" comment="filtro e paginação para os tópicos">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/032e2b60edc8a84b3dc94a541910aa3ff622e421" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/a/0a54f910c46a6a3332ac35fcad7a041d1325138f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/d/0d03fd335d36d01d6e849fd380f87f1441e20d75" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2a88c0382a7dd673d5fcd316cfddb7fdb11aa34b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2cabb939da04d3de3a200bf2b575690e1a16316d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/48ab5ada2baa1c64c52841703a08f3498426dd52" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/c/7c2344ac777a6967b5c033ce3aa5ce71a32b0681" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/863e0292fd7e9b3e74dafd6cc01f73ba76346482" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/d/8d1ef74ebb9cc47666f911d6f25abf5018e95cfb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/7/9722c870d5c48fa6035f4db2be9562523a35415a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a9ce08c5918c736380aebd9b804a93db8d9ec0f4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/abbb7e48d5f218d45489ae0b98cb2f8a1801c216" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c52bb216dc6bea80b2a5f60424001df922e2300d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/c/fc8c2e3f8cee9f05e66610bb0eb8560e77668c3f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/3/032e2b60edc8a84b3dc94a541910aa3ff622e421" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/a/0a54f910c46a6a3332ac35fcad7a041d1325138f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/d/0d03fd335d36d01d6e849fd380f87f1441e20d75" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/a/2a88c0382a7dd673d5fcd316cfddb7fdb11aa34b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/c/2cabb939da04d3de3a200bf2b575690e1a16316d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/8/48ab5ada2baa1c64c52841703a08f3498426dd52" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/c/7c2344ac777a6967b5c033ce3aa5ce71a32b0681" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/6/863e0292fd7e9b3e74dafd6cc01f73ba76346482" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/d/8d1ef74ebb9cc47666f911d6f25abf5018e95cfb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/7/9722c870d5c48fa6035f4db2be9562523a35415a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/9/a9ce08c5918c736380aebd9b804a93db8d9ec0f4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/b/abbb7e48d5f218d45489ae0b98cb2f8a1801c216" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/5/c52bb216dc6bea80b2a5f60424001df922e2300d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/c/fc8c2e3f8cee9f05e66610bb0eb8560e77668c3f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/br/com/mulhermarav/forum/dto/TopicoPorCategoriaDto.kt" afterDir="false" />
+    <list default="true" id="850bcbc3-7330-4856-b4d6-058d714a6dbb" name="Changes" comment="cache e query">
+      <change afterPath="$PROJECT_DIR$/../camada-recursos/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/br/com/mulhermarav/forum/ForumApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/br/com/mulhermarav/forum/ForumApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/br/com/mulhermarav/forum/controller/TopicoController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/br/com/mulhermarav/forum/controller/TopicoController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/br/com/mulhermarav/forum/repository/TopicoRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/br/com/mulhermarav/forum/repository/TopicoRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/br/com/mulhermarav/forum/service/RespostaService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/br/com/mulhermarav/forum/service/RespostaService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/br/com/mulhermarav/forum/service/TopicoService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/br/com/mulhermarav/forum/service/TopicoService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/mulhermarav/forum/ForumApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/mulhermarav/forum/ForumApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/mulhermarav/forum/ForumApplicationKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/mulhermarav/forum/ForumApplicationKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/mulhermarav/forum/service/TopicoService$listar$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/mulhermarav/forum/service/TopicoService$listar$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/mulhermarav/forum/service/TopicoService$listar$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/mulhermarav/forum/service/TopicoService$listar$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/mulhermarav/forum/service/TopicoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/mulhermarav/forum/service/TopicoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,12 +84,29 @@
       <option name="project" value="LOCAL" />
       <updated>1703634999611</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="cache e query">
+      <option name="closed" value="true" />
+      <created>1703725204483</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703725204483</updated>
+    </task>
+    <task id="LOCAL-00003" summary="cache e query">
+      <option name="closed" value="true" />
+      <created>1703725218987</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703725218987</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="filtro e paginação para os tópicos" />
-    <option name="LAST_COMMIT_MESSAGE" value="filtro e paginação para os tópicos" />
+    <MESSAGE value="cache e query" />
+    <option name="LAST_COMMIT_MESSAGE" value="cache e query" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

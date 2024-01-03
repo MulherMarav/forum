@@ -1,0 +1,22 @@
+spring:
+    datasource:
+        url: jdbc:h2:mem:forum
+        username: sa
+        password:
+        driver-class-name: org.h2.Driver
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        properties:
+            hibernate:
+                show_sql: true
+                format_sql: true
+    cache:
+        type: redis
+    redis:
+        host: localhost
+        port: 6379
+    # docker pull redis:latest
+    # docker run -p 6379:6379 --name redis-local redis:latest
+    h2:
+        console:
+            enabled: true
